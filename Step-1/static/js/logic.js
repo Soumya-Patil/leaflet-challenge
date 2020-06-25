@@ -9,16 +9,18 @@ d3.json(Url, function(data) {
     console.log(data.features)
   });
 
-  function createFeatures(earthquakeData) {
+function createFeatures(earthquakeData) {
 
     // Define a function we want to run once for each feature in the features array
     // Give each feature a popup describing the place and time of the earthquake
     function onEachFeature(feature, layer) {
-      layer.bindPopup("<h3>" + feature.properties.place +
+    layer.bindPopup("<h3>" + feature.properties.place +
         "</h3><hr><p>" + new Date(feature.properties.time) + "</p>");
     }
-  
+
     // Define function to create the circle radius based on the magnitude
     function radiusSize(magnitude) {
-      return magnitude * 10000;
+    return magnitude * 10000;
     }
+
+}
